@@ -1,0 +1,22 @@
+{
+  "name": "node_exe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABHISHEKGHARAMI/Node_exe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ABHISHEKGHARAMI/Node_exe/issues"
+  },
+  "homepage": "https://github.com/ABHISHEKGHARAMI/Node_exe#readme",
+  "dependencies": {
+    "validator": "^13.7.0"
+  }
+}

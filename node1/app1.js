@@ -1,5 +1,6 @@
 
 const fs = require('fs');
+const yargs = require('yargs');
 const val = require('validator');
 const data2 = require('./notes');
 fs.writeFileSync('notes.txt','This is created by Node.js',(err,data)=>{
@@ -18,3 +19,14 @@ console.log(data5);
 fs.appendFileSync('./notes.txt',data5);
 console.log(val.isEmail('agharami@gmail.com'));
 
+console.log(process.argv);
+
+const command = process.argv[2];
+if(command==='add'){
+    console.log('Addingnotes');
+}
+else if(command === 'remove'){
+    console.log('removing Notes.');
+}else{
+    console.log('Not Adding...');
+}

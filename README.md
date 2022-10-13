@@ -1,0 +1,1 @@
+This is the Practise for Node.js various framework including mongoose and deploying it in real world completely writeen by  javascript.

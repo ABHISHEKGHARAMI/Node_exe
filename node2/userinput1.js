@@ -9,8 +9,13 @@ yargs.version('1.1.0');
 yargs.command({
     command :'add',
     describe : 'Add a new note',
-    handler: function(){
-        console.log('Adding new note');
+    builder :{
+      title : {
+         describe : 'Node title. '
+      }
+    },
+    handler: function(argv){
+        console.log('Adding new note',argv);
     }
 });
 //remove command

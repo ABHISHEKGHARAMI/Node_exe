@@ -14,9 +14,9 @@ const geocode = (address,callback)=>{
             latitude: 0 ,
             longitude : 0
         }
-        return data;
-
+         callback(data); 
      },2000);
 }
-const data = geocode('Halishar');
-console.log(data);
+geocode('Halishar',(data1)=>{
+   console.log(data1);
+});

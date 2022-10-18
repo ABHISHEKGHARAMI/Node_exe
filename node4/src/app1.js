@@ -19,7 +19,7 @@ app.set('view engine','hbs');
 hbs.registerPartials(partialpath);
 app.get('',(req,res)=>{
   res.render('index',{
-    title: "weather app",
+    title: "Weather app",
     name : "Abhishek Gharami"
   })
 });
@@ -41,6 +41,26 @@ app.get('/help',(req,res)=>{
 app.get('/weather',(req,res)=>{
     res.send('<h1>Serving weather data</h1>')
 })
+
+
+//for non generic errors
+
+
+app.get('/help/*',(req,res)=>{
+    res.render('error',{
+        error : '404',
+        text : 'Error 404 non generic...'
+    })
+});
+//error 404 page showing for generic error
+app.get('*',(req,res)=>{
+    res.render('error',{
+        error : '404',
+        text : 'My 404 Page...'
+    })
+});
+
+
 
 app.listen(3000,()=>{
     console.log('running 3000!!!!!');

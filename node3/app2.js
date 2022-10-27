@@ -15,7 +15,7 @@ request({url: url},(error,response)=>{
 
 });
 */
-//http://api.weatherstack.com/current?access_key=1d2c0ef28050254b8192ef89de2a69d0&query=22.9295,88.4249&units=f
+//http://api.weatherstack.com/current?access_key=6c716eb7d6566e76911311c092c93b5c&query=22.9295,88.4249&units=f
 //https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiYWJoaXNoZWtnaGFyYW1pIiwiYSI6ImNsOTVneTN3bjAxaTUzc2xrNHlvYmloNWgifQ.uJbiJV_GI7zi80MwFXEtRA
 const curl = "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiYWJoaXNoZWtnaGFyYW1pIiwiYSI6ImNsOTVneTN3bjAxaTUzc2xrNHlvYmloNWgifQ.uJbiJV_GI7zi80MwFXEtRA";
 request({url : curl},(error,response)=>{
@@ -48,4 +48,6 @@ request({url: url},(error,response)=>{
 //Now have to automate the user choice city to collect and turn into geocode 
 //and then receive the Api data into predictions
 
-
+//https://api.openweathermap.org/data/3.0/onecall?lat=22.920967&lon=88.436833&exclude={part}&appid=bff04e62b19018f2e6c69a5f3276a379
+//https://api.openweathermap.org/data/2.5/weather?lat=22.920967&&lon=88.436833&appid=bff04e62b19018f2e6c69a5f3276a379
+//https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=eabdf96a9b399d972d310820555d7702

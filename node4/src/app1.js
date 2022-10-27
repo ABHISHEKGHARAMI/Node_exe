@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs'); 
+const geocode = require('./utils/geocode1');
+const forecast =require('./utils/forecast1');
+
 
 
  
@@ -38,9 +41,41 @@ app.get('/help',(req,res)=>{
     })
 });
 
+
+
+
+//intregating the query string
 app.get('/weather',(req,res)=>{
-    res.send('<h1>Serving weather data</h1>')
-})
+    if(!req.query.address){
+        return res.send({
+            error : 'provide address'
+        })
+    }
+    console.log(req.query);
+   geocode(req.query.address,(error,data1)=>{
+    const lat = data1.long;
+    const long = data1.lat;
+    forecast(lat,long,(error,data2)=>{
+         console.log("Real temparature is :",data2.temp);
+        console.log('Feellike :',data2.feels_like);
+        console.log('Prediction is :',data2.desc);
+        console.log("Location :",data1.location);
+    res.send({
+        temp : data2.temp,
+        Feellike : data2.feels_like,
+        Prediction : data2.desc,
+        Location :  data1.location
+    });
+    })
+});
+console.log(req.query);
+    /*res.send({
+        forecast : 'Its raining',
+        location : 'Halisahar',
+        address : req.query.address
+    });
+    */ 
+});
 
 
 //for non generic errors
